@@ -1,0 +1,9 @@
+<html>
+  <head>
+    <title>TITLE</title>
+  </head>
+  <body>
+  <?php
+  ?>
+  </body>
+</html>
