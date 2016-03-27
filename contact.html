@@ -1,58 +1,44 @@
 <html>
-  <head>
-    /* <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-    <script type="text/javascript">
-      tinymce.init({
-        selector: '#myeditablediv',
-        inline: true
-      }); MAYBE*/
-    <title>CONTACT US IMMEDIATELY</title>
-    <h1>PLEASE CONTACT US NOW</h1>
-  </head>
-  <body>
-  <?php
-  if(loggedIn = 1)
-  {
-    <div id="not_logged_in" class="contactForm">
-      <form action="/CONACT_US.php" method="post"> 
-      /*prevent injections, verify required fields*/
-        First Name:<br>
-        <input type="hidden" name="firstname" value=get.current(first-name)>
-        Second Name:<br>
-        <input type="hidden" name="lastname" value=get.current(last-name)>
-        Email:<br>
-        <input type="text" name="emailaddress" value=get.current(email-address)>
-        Subject:<br>
-        <input type="hidden" name="subject" value="What is this message regarding?">
-        Message:<br>
-        <input id="myeditablediv" type="text" name="message" value="Type message here"> /*Use tinyMCE somehow*/
-        <br>
-        <input type="submit">
-      </form>
-    </div>
-    }else{
-    <div id="already_logged_in" class="contactForm">
-      <form action="/CONACT_US.php" method="post"> 
-      /*prevent injections, verify required fields*/
-        First Name:<br>
-        <input type="hidden" name="firstname" value="Enter First Name Here">
-        Second Name:<br>
-        <input type="hidden" name="lastname" value="Enter Last Name Here">
-        Email:<br>
-        <input type="hidden" name="email" value="Enter Email Address Here">
-        Subject:<br>
-        <input type="hidden" name="subject" value=g"Brief description of message">
-        Message:<br>
-        <input id="myeditablediv" type="text" name="message" value="Type message here"> /*Use tinyMCE somehow*/
-        <br>
-        <input type="submit">
-      </form>
-    </div>
-    }
-    ?>
-    <div>
-      <a href="/index.html">HOMEPAGE THO</a> /*link to home page*/
-      <a href="/login.html">LOGIN PAGE</a> /*link to login page*/
-    </div>
-  </body>
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<!--
+<form action="loginAttempt.php" method="post">
+    User Name:<br>
+    <input type="hidden" name="identity">
+    <br>
+    Password:<br>
+    <input type="hidden" name="password">
+    <input type="Login">
+</form>
+-->
+<h1 class="text-lg-center">Log in before they get you!</h1>
+
+<div class="container">
+
+    <form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+
+</div>
+<a href="index.php">HOMEPAGE THO</a> /*link to home page*/
+<a href="contact.php">CONTACT US</a> /*link to contact page*/
+
+
+<script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+<script src="js/bootstrap.min.js"> </script>
+</body>
 </html>
