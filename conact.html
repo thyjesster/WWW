@@ -1,5 +1,11 @@
 <html>
   <head>
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script type="text/javascript">
+      tinymce.init({
+        selector: '#myeditablediv',
+        inline: true
+      });
     <title>CONTACT US IMMEDIATELY</title>
     <h1>PLEASE CONTACT US NOW</h1>
   </head>
@@ -13,7 +19,8 @@
         Subject:<br>
         <input type="hidden" name="subject" value="What is this message regarding?">
         Message:<br>
-        <input type="text" name="message" value="Type message here">
+        <input id="myeditablediv" type="text" name="message" value="Type message here">
+        </div>
       </form>
     </div>
   </body>
