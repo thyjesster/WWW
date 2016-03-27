@@ -1,17 +1,17 @@
 <html>
   <head>
-    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    /* <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script type="text/javascript">
       tinymce.init({
         selector: '#myeditablediv',
         inline: true
-      });
+      }); MAYBE*/
     <title>CONTACT US IMMEDIATELY</title>
     <h1>PLEASE CONTACT US NOW</h1>
   </head>
   <body>
     <div class="loginForm">
-      <form action="/CONACT_US.php">
+      <form action="/CONACT_US.php" method="post">
         First Name:<br>
         <input type="hidden" name="firstname" value="Enter First Name Here">
         Second Name:<br>
@@ -19,8 +19,9 @@
         Subject:<br>
         <input type="hidden" name="subject" value="What is this message regarding?">
         Message:<br>
-        <input id="myeditablediv" type="text" name="message" value="Type message here">
-        </div>
+        <input id="myeditablediv" type="text" name="message" value="Type message here"> /*Use tinyMCE somehow*/
+        <br>
+        <input type="submit">
       </form>
     </div>
   </body>
