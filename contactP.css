@@ -5,7 +5,10 @@ html
 
 body
 {
+	margin: 0;
+	padding: 0;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-decoration: none !important;
 }
 
 h1
@@ -20,8 +23,8 @@ h1
 div.title
 {
 	width:100%;
-	height: 200px;
-	text-align: left;
+	height: 226px;
+	text-align: left bottom;
 	margin: 0 auto;
 	margin-left: auto;
 	margin-right: auto;
@@ -36,22 +39,78 @@ div.logged_in_form
 	border: 5px solid lightsteelblue;
 }
 
+a
+{
+	color: #888;
+	text-decoration: inherit;
+}
+
+.a-title
+{
+	margin-top: 46px;
+}
+
+a:hover
+{
+	color: #999;
+}
+
 div.header
 {
-	background-color: #000;
+	height: 54px;
+	background-color: #373a3c;
+	color: #eceeef;
 	text-decoration:none !important;
-	font-family: "helvetica neue";
+	font-family: "helvetica neue", Helvetica, Arial, sans-serif;
 	-moz-column-count: 8;
 	margin: 0 auto;
 	border-radius: .3rem;
-	/*-moz-column-rule-style: solid;
-	-moz-column-rule-width: thin;
-	-moz-column-rule-color: #AAA;
-	column-count:3;
-	column-span:all;
-	column-rule: thin solid #AAA;*/
 }
-div.header:hover
+
+.navbar
 {
-	
+	height: 100px;
+	position: left;
+  	padding-left: 1rem;
+  	margin-top: .5rem;
+  	padding-bottom: .25rem;
+  	font-size: 1.25rem;
+  	color: white;
+}
+.nav
+{
+	padding-left: 1.3rem;
+	margin-top: .5rem;
+  	margin-bottom: 0;
+  	list-style: none;
+  	float: left;
+}
+
+.nav-itema
+{
+	margin-top: 0.5rem;
+}
+
+.link-active
+{
+	color: white !important;
+}
+
+h1
+{
+	font-size: 42px;
+}
+
+
+form
+{
+	text-align: center;
+	position: center;
+}
+
+.myeditablediv
+{
+	width: 90px;
+	height: 390px;
+	border: 1px solid;
 }
