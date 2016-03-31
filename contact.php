@@ -84,12 +84,12 @@
    		return $data;
 	}
 	?>
-  <!-- <?php 
+  <!-- <?php
   if(loggedIn = 1)
   {
     <div id="not_logged_in" class="contactForm">
       <form action="/CONACT_US.php" method="post"> 
-      /*prevent injections, verify required fields*/
+      <!--prevent injections, verify required fields-->
         First Name:<br>
         <input type="hidden" name="firstname" value=get.current(first-name)>
         Second Name:<br>
@@ -99,7 +99,7 @@
         Subject:<br>
         <input type="hidden" name="subject" value="What is this message regarding?">
         Message:<br>
-        <input id="myeditablediv" type="text" name="message" value="Type message here"> /*Use tinyMCE somehow*/
+        <input id="myeditablediv" type="text" name="message" value="Type message here"> <!--Use tinyMCE somehow-->
         <br>
         <input type="submit">
       </form>
