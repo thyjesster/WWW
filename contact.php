@@ -34,6 +34,56 @@
    		<h1 class="a-title">Please Contact us</h1>
    		<p class="b-title">For any information or queries</p>
     	</div>
+	
+	
+	<? php
+	$firstname = $lastname = $email = $subject = $message = "";
+	$firstnameERR = $emailERR = $subjectERR = $messageERR = "";
+	
+	if ($_SERVER["REQUEST_METHOD"] == "POST")
+	{
+   		if (empty($_POST["firstname"])) 
+   		{
+     			$firstnameErr = "Name is required";
+   		} else 
+   		{
+     			$firstname = test_input($_POST["firstname"]);
+     		}
+     		
+     		if (empty($_POST["email"])) 
+   		{
+     			$emailErr = "Email is required";
+   		} else 
+   		{
+     			$email = test_input($_POST["email"]);
+     		}
+     		
+     		if (empty($_POST["subject"])) 
+   		{
+     			$subjectErr = "Subject is required";
+   		} else 
+   		{
+     			$subject = test_input($_POST["subject"]);
+     		}
+     		
+     		if (empty($_POST["message"])) 
+   		{
+     			$messageErr = "Message body is required";
+   		} else 
+   		{
+     			$message = test_input($_POST["message"]);
+     		}
+     	}
+     	
+     	
+	function test_input($data) 
+	{
+   		$data = trim($data);
+   		$data = stripslashes($data);
+   		$data = htmlspecialchars($data);
+   		return $data;
+	}
+	?>
   <!-- <?php 
   if(loggedIn = 1)
   {
@@ -56,18 +106,23 @@
     </div>
     }else{ -->
 	<div id="logged_in_form" class="contactForm">
-	<form action="/contactPageTrim.php" method="post"> 
+	<p><span class="error">* required field</span></p>
+	<form action="TESTCONTACTPOST.html" method="post"> 
       <!-- prevent injections, verify required fields -->
 		<br>First Name:
 		<input type="text" name="firstname" placeholder="Enter First Name Here...">
+		<span class="error">* <?php echo $firstnameErr;?></span>
 		<br>Second Name:
 		<input type="text" name="lastname" placeholder="Enter Last Name Here...">
 		<br>Email:
 		<input type="text" name="email" placeholder="Enter Email Address Here...">
+		<span class="error">* <?php echo $emailErr;?></span>
 		<br>Subject:
 		<input type="text" name="subject" placeholder="Brief description of message...">
+		<span class="error">* <?php echo $subjectErr;?></span>
 		<br>Message:
-		<input id="myeditablediv" type="text" name="message" maxlength="9999" placeholder="Type message here..."> <!--Use tinyMCE somehow-->
+		<input id="myeditablediv" type="text" name="message" rows="6" cols="30" placeholder="Type message here..."> <!--Use tinyMCE somehow-->
+		<span class="error">* <?php echo $messageErr;?></span>
 		<br>
 		<input type="submit">
 	</form>
