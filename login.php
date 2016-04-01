@@ -9,36 +9,32 @@
             height: 200px;
         }
     </style>
-
+    <!-- var = new XMLHttpRequest(); -->
 
 </head>
 <body>
 
-<div class="blog-masthead">
-    <nav class="navbar navbar-dark bg-inverse">
-        <a class="navbar-brand"></a>
-        <ul class="nav navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.php">
-                    Home
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="logIn.php">
-                    Log In
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contact.php">
-                    Contact
-                </a>
-            </li>
+<nav class="navbar navbar-dark bg-inverse">
+    <ul class="nav navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="index.php">
+                Home
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="logIn.php">
+                Log In
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contact.php">
+                Contact
+            </a>
+        </li>
 
-        </ul>
+    </ul>
 
-    </nav>
-
-</div>
+</nav>
 
 <div class="jumbotron" style="background-color: lightsteelblue">
     <div class="container">
@@ -60,32 +56,82 @@
     <input type="Login">
 </form>
 -->
-<d
+
+<?php
+include 'connection.php';
+//include 'welcome.php';
+
+?>
 
 <div class="container-fluid" >
-<div class="row">
-    <div class="container col-lg-6 col-lg-offset-3 text-lg-center ">
-        <h2 class="form-signin-heading display-3">Please sign in</h2>
-        <div class="form-group">
+    <div class="row">
+        <!-- Register
+         * need to change php to a separate function to create users
+         -->
 
-            <form action="welcome.php" method="post" class="form-signin">
-                    <input type="text" class="form-control" placeholder="Username">
+        <div class="container col-lg-3 col-md-offset-3 text-lg-center ">
+            <h2 class="form-signin-heading display-3">Register</h2>
 
-        </div>
-        <div class=" form-group">
 
-                     <input type="text" class="form-control" placeholder="Password">
+                <!-- Form entry boxes-->
+                <div class="form-group">
 
-        </div>
+                    <form action="welcome.php" method="post" class="form-signin">
+                <div class=" form-group">
+
+                            <input type="text" class="form-control" placeholder="Email" name="email">
+
+                </div>
+
+                            <input type="text" class="form-control" placeholder="First Name" name="firstname">
+                </div>
+
+                <div class=" form-group">
+                            <input type="text" class="form-control" placeholder="Last Name" name="lastname">
+                </div>
+
+                <div class=" form-group">
+
+                    <input type="text" class="form-control" placeholder="Username" name="username">
+
+                </div>
+
+                <div class=" form-group">
+
+                             <input type="text" class="form-control" placeholder="Password" name="password">
+
+                </div>
         <div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-            </form>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                </form>
+            </div>
+
         </div>
+        
+        <!-- Sign In-->
+
+        <div class="container col-lg-3 col-md-offset-0 text-lg-center ">
+            <h2 class="form-signin-heading display-3">Sign in</h2>
+            <div class="form-group">
+
+                <form action="welcome.php" method="post" class="form-signin">
+                    <input type="text" class="form-control" placeholder="Username" name="username">
+
+            </div>
+            <div class=" form-group">
+
+                <input type="text" class="form-control" placeholder="Password" name="password">
+
+            </div>
+            <div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                </form>
+            </div>
 
         </div>
     </div>
 </div>
-</div>
+
 
 
 <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
