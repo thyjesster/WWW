@@ -7,39 +7,44 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- This is how you comment?-->
+    <style>
+        .jumbotron {
+            height: 200px;
+        }
+    </style>
+
+
 </head>
 
 <body>
 
-<div class="blog-masthead">
-    <nav class="navbar navbar-dark bg-inverse">
-        <a class="navbar-brand"></a>
-        <ul class="nav navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">
-                    Home
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="logIn.php">
-                    Log In
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="contact.php">
-                    Contact
-                </a>
-            </li>
+<nav class="navbar navbar-dark bg-inverse">
+    <ul class="nav navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="index.php">
+                Home
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="logIn.php">
+                Log In
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contact.php">
+                Contact
+            </a>
+        </li>
 
-        </ul>
+    </ul>
 
-    </nav>
+</nav>
 
-</div>
+
 
 <div class="jumbotron" style="background-color: lightsteelblue">
     <div class="container">
-        <h1 class="blog-title">Windsor Bloglife</h1>
+        <h1>Windsor Bloglife</h1>
         <p class="lead blog-description">
             A blog about the life of a University of Windsor student!
             How cool!
