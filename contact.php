@@ -1,4 +1,5 @@
 <html>
+<?php require_once(common.php);?>
 	<header>
 	<link rel="stylesheet" type="text/css" href="contactP.css" />
 	<title>Contact Us</title>
@@ -14,7 +15,6 @@
     
   	</header>
 <body>
-
 	<div class="header">
 		<nav class="navbar">
 		<ul class="nav">
@@ -35,16 +35,17 @@
    		<p class="b-title">For any information or queries</p>
     	</div>
 	
-	
 	<? php
 	$firstname = $lastname = $email = $subject = $message = "";
 	$firstnameERR = $emailERR = $subjectERR = $messageERR = "";
+	$accepted = 1;
 	
 	if ($_SERVER["REQUEST_METHOD"] == "POST")
 	{
    		if (empty($_POST["firstname"])) 
    		{
      			$firstnameErr = "Name is required";
+     			$accepted = 0;
    		} else 
    		{
      			$firstname = test_input($_POST["firstname"]);
@@ -53,6 +54,7 @@
      		if (empty($_POST["email"])) 
    		{
      			$emailErr = "Email is required";
+     			$accepted = 0;
    		} else 
    		{
      			$email = test_input($_POST["email"]);
@@ -61,6 +63,7 @@
      		if (empty($_POST["subject"])) 
    		{
      			$subjectErr = "Subject is required";
+     			$accepted = 0;
    		} else 
    		{
      			$subject = test_input($_POST["subject"]);
@@ -69,6 +72,7 @@
      		if (empty($_POST["message"])) 
    		{
      			$messageErr = "Message body is required";
+     			$accepted = 0:
    		} else 
    		{
      			$message = test_input($_POST["message"]);
@@ -84,12 +88,12 @@
    		return $data;
 	}
 	?>
-  <!-- <?php
+  <!-- <?php 
   if(loggedIn = 1)
   {
     <div id="not_logged_in" class="contactForm">
       <form action="/CONACT_US.php" method="post"> 
-      <!--prevent injections, verify required fields-->
+      /*prevent injections, verify required fields*/
         First Name:<br>
         <input type="hidden" name="firstname" value=get.current(first-name)>
         Second Name:<br>
@@ -99,32 +103,41 @@
         Subject:<br>
         <input type="hidden" name="subject" value="What is this message regarding?">
         Message:<br>
-        <input id="myeditablediv" type="text" name="message" value="Type message here"> <!--Use tinyMCE somehow-->
+        <input id="myeditablediv" type="text" name="message" value="Type message here"> /*Use tinyMCE somehow*/
         <br>
         <input type="submit">
       </form>
     </div>
     }else{ -->
 	<div id="logged_in_form" class="contactForm">
-	<p><span class="error">* required field</span></p>
-	<form action="TESTCONTACTPOST.html" method="post"> 
-      <!-- prevent injections, verify required fields -->
-		<br>First Name:
+	<p><span class="error"></span></p>
+	<form action="TESTCONTACTPOST.html" method="post">
+		* required fields<br>
+		<br>First Name:<br>
 		<input type="text" name="firstname" placeholder="Enter First Name Here...">
 		<span class="error">* <?php echo $firstnameErr;?></span>
-		<br>Second Name:
+		<br>Second Name:<br>
 		<input type="text" name="lastname" placeholder="Enter Last Name Here...">
-		<br>Email:
+		<br>Email:<br>
 		<input type="text" name="email" placeholder="Enter Email Address Here...">
 		<span class="error">* <?php echo $emailErr;?></span>
-		<br>Subject:
+		<br>Subject:<br>
 		<input type="text" name="subject" placeholder="Brief description of message...">
 		<span class="error">* <?php echo $subjectErr;?></span>
-		<br>Message:
-		<input id="myeditablediv" type="text" name="message" rows="6" cols="30" placeholder="Type message here..."> <!--Use tinyMCE somehow-->
+		<br>Message:<br>
+		<input id="myeditablediv" type="text" name="message" rows="6" cols="30" placeholder="Type message here...">
 		<span class="error">* <?php echo $messageErr;?></span>
 		<br>
 		<input type="submit">
 	</form>
 	</div>
+	<div>
+	<form action="contact_info.xml" method="get">
+		If You wish to contact us by other methods:
+		<br>
+  		<button type="submit" formaction="contact_info.xml">Click Here!</button>
+  		For our super private contact info..
+	</form>
+	</div>
+</body>
 </html>
