@@ -2,16 +2,13 @@
 <body>
 <?php
 
-echo $_POST["firstname"];
+echo Your message has been recieved
 <br>
-echo $_POST["lastname"];
-<br>
-echo $_POST["email"];
-<br>
-echo $_POST["subject"];
-<br>
-echo $_POST["message"];
-<br>
+	<form action="index.php" method="get">
+		To be redirected HOME
+		<br>
+  		<button type="submit" formaction="contact_info.xml">Click Here!</button>
+	</form>
 
 ?>
 </body>
