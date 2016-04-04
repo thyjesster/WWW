@@ -2,11 +2,11 @@
 <?xml-stylesheet type="text/xsl" href="contact_info.xsl"?>
 <contact>
 
-  <contact_info>
-    <address lang="en">401 Sunset Ave, Windsor Ontario</address>
-    <email>sheathe@uwindsor.ca</email>
-    <phone>1-519-555-1235</phone>
-    <domain>University of Windsor</domain>
-  </contact_info>
-  
+    <contact_info>
+        <address lang="en">401 Sunset Ave, Windsor Ontario</address>
+        <email>sheathe@uwindsor.ca</email>
+        <phone>1-519-555-1235</phone>
+        <domain>University of Windsor</domain>
+    </contact_info>
+
 </contact>
