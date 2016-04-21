@@ -58,63 +58,75 @@
 -->
 
 <?php
-include 'connection.php';
-//include 'welcome.php';
+include 'createDB.php';
+//include "welcome.php";
+
 
 ?>
 
+<div class="container">
+
+    <form class="form-signin" action="welcome.php" method="post" >
+        <h2 class="form-signin-heading">Please sign in</h2>
+
+        <input type="text" id="user" name="user" class="form-control" placeholder="Username" required="" autofocus="">
+
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="pass" name="pass" class="form-control" placeholder="Password" required="">
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+
+</div>
+
+
 <div class="container-fluid" >
     <div class="row">
-        <!-- Register
-         * need to change php to a separate function to create users
-         -->
 
         <div class="container col-lg-3 col-md-offset-3 text-lg-center ">
-            <h2 class="form-signin-heading display-3">Register</h2>
+            <h2 class="form-signin-heading display-3"> Register</h2>
 
-
-                <!-- Form entry boxes-->
                 <div class="form-group">
 
-                    <form action="welcome.php" method="post" class="form-signin">
+                    <form class="form-signin" action="register.php" method="post" >
+                        
                 <div class=" form-group">
 
-                            <input type="text" class="form-control" placeholder="Email" name="email">
+                            <input type="email" id="email" name="email" class="form-control" placeholder="Email">
 
                 </div>
 
-                            <input type="text" class="form-control" placeholder="First Name" name="firstname">
+                            <input type="text" id="firstname" name="firstname" class="form-control" placeholder="First Name" >
                 </div>
 
                 <div class=" form-group">
-                            <input type="text" class="form-control" placeholder="Last Name" name="lastname">
-                </div>
-
-                <div class=" form-group">
-
-                    <input type="text" class="form-control" placeholder="Username" name="username">
-
+                            <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last Name" >
                 </div>
 
                 <div class=" form-group">
 
-                             <input type="text" class="form-control" placeholder="Password" name="password">
+                    <input type="text" id="user" name="user" class="form-control" placeholder="Username" >
+
+                </div>
+
+                <div class=" form-group">
+
+                             <input type="password" id="pass" name="pass" class="form-control" placeholder="Password" >
 
                 </div>
         <div>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Create Account!</button>
                 </form>
             </div>
 
         </div>
-        
-        <!-- Sign In-->
 
         <div class="container col-lg-3 col-md-offset-0 text-lg-center ">
             <h2 class="form-signin-heading display-3">Sign in</h2>
+            <form action="welcome.php" method="post" class="form-signin">
             <div class="form-group">
 
-                <form action="welcome.php" method="post" class="form-signin">
+
                     <input type="text" class="form-control" placeholder="Username" name="username">
 
             </div>
@@ -124,7 +136,7 @@ include 'connection.php';
 
             </div>
             <div>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                <button class="btn btn-lg btn-primary btn-block"  type="submit"> Sign in </button>
                 </form>
             </div>
 
@@ -133,7 +145,7 @@ include 'connection.php';
 </div>
 
 
-
+<script src="validation.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
 <script src="js/bootstrap.min.js"> </script>
 </body>
