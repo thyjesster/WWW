@@ -88,7 +88,7 @@ div.header
 
 .nav-itema
 {
-	margin-top: 0.5rem;
+	margin-top: 0.6rem;
 }
 
 .link-active
@@ -114,3 +114,9 @@ form
 	height: 390px;
 	border: 1px solid;
 }
+
+.tiny
+{
+	width:50%;
+}
+
