@@ -3,23 +3,17 @@
 <head>
     <link rel="stylesheet" type="text/css" href="contactP.css" />
     <title>Contact Us</title>
-
-    <script src="tinymce/js/tinymce/tinymce.min.js"></script>
-    <script>
-        tinymce.init({
-            selector: 'textarea',
-            position:center,
-            min_height:100,
-            min_width:400,
-            plugin: 'advlist autolink link image lists charmap print preview',});
-    </script>
-
-
+    <style>
+	ul#menu li a
+	{
+   	display:inline;
+	}
+</style>
 </head>
 <body>
 <div class="header">
     <nav class="navbar">
-        <ul class="nav navbar-nav">
+        <ul class="menu"> <!--"nav navbar-nav"-->
             <li class="nav-item active">
                 <a class="nav-link" href="index.php">
                     Home
@@ -50,99 +44,25 @@
     <p class="b-title">For any information or queries</p>
 </div>
 
- <?php /*
-$firstname = $lastname = $email = $subject = $message = "";
-$firstnameERR = $emailERR = $subjectERR = $messageERR = "";
-$accepted = 1;
-
-if ($_SERVER["REQUEST_METHOD"] == "POST")
-{
-    if (empty($_POST["firstname"]))
-    {
-        $firstnameErr = "Name is required";
-        $accepted = 0;
-    } else
-    {
-        $firstname = test_input($_POST["firstname"]);
-    }
-
-    if (empty($_POST["email"]))
-    {
-        $emailErr = "Email is required";
-        $accepted = 0;
-    } else
-    {
-        $email = test_input($_POST["email"]);
-    }
-
-    if (empty($_POST["subject"]))
-    {
-        $subjectErr = "Subject is required";
-        $accepted = 0;
-    } else
-    {
-        $subject = test_input($_POST["subject"]);
-    }
-
-    if (empty($_POST["message"]))
-    {
-        $messageErr = "Message body is required";
-        $accepted = 0;
-   		} else
-    {
-        $message = test_input($_POST["message"]);
-    }
-}
-
-
-function test_input($data)
-{
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
-*/
-?>
-
-
+	 Please Login First or fill out the form below!<br>
+	 <?php if($_SESSION[isloggedin] != true){
+	 echo'
+	 	<button type="loginredirect" action="login.php">Login Here</button>
+	 ';};
+	 
 <div id="logged_in_form" class="contactForm">
-    <p><span class="error"></span></p>
-    <form action="TESTCONTACTPOST.html" method="post">
-        Please fill out the form below!<br>
+    <form action="contactUsMessage.php" method="post">
+       
         * required fields<br>
-        <input type="text" name="firstname" placeholder="Enter First Name Here...">
-        <span class="error"> <?php// echo $firstnameErr;?></span>
-        <br>
-        <input type="text" name="lastname" placeholder="Enter Last Name Here...">
-        <br>
-        <input type="text" name="email" placeholder="Enter Email Address Here...">
-        <span class="error">* <?php// echo $emailErr;?></span>
-        <br>
-        <input type="text" name="subject" placeholder="Brief description of message...">
-        <span class="error">* <?php// echo $subjectErr;?></span>
-        <br>
-        <span class="error"><?php// echo $messageErr;?></span>
-        <!--<form id="tiny" action="tiny-process.php" method="POST">
-                <textarea id="fullname" name="fullname">
-            <p>Type Message body here...</p>
-                    </textarea>
-
-                    <textarea id="email" name="email">
-            <p>Type Message body here...</p>
-                    </textarea>
-
-                    <textarea id="subject" name="subject">
-            <p>Type Message body here...</p>
-                    </textarea>
-
-                    <textarea id="msg" name="msg">
-            <p>Type Message body here...</p>
-                    </textarea>
-            </form>-->
-        <br>
-        <input type="submit">>
+        First Name:<input type="text" name="firstname" placeholder="Enter First Name Here...">
+        *<br>
+        Last Name:<input type="text" name="lastname" placeholder="Enter Last Name Here...">
+        *<br>
+        Email Address:<input type="text" name="email" placeholder="Enter Email Address Here...">
+        *<br>
+        Message Subject:<input type="text" name="subject" placeholder="Brief description of message...">
+        *<br>
+        <input type="Submit" value="Submit and Continue">
     </form>
 </div>
 <div>
